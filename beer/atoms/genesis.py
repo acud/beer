@@ -1,6 +1,7 @@
 # this file handles everything that has to do with creating bytes
 # random or not
 
-def getRandomBytes(len):
+import os
 
-    return 123
+def randomBytes(len):
+    return os.urandom(len)

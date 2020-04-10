@@ -2,12 +2,12 @@
 
 from http import client
 
-def get(url):
+def get(url, resource):
     conn = client.HTTPSConnection(url)
-    conn.request("GET", "/")
+    conn.request("GET", resource)
     r1 = conn.getresponse()
     data1 = r1.read()
-
     conn.close()
+
     return data1, r1.status
 

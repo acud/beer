@@ -1,7 +1,10 @@
-from atoms import request
+from atoms import request, hash, genesis
 
 def getsome():
-    body, status = request.get("swarm-gateways.net")
+    hash.sha3("abcd")
+    data = genesis.randomBytes(100)
+    print(len(data))
+    body, status = request.get("swarm-gateways.net", "/")
     print(body, status)
 
 def main():
