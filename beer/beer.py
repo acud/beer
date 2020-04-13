@@ -1,13 +1,12 @@
-from atoms import request, hash, genesis
+from organisms import upload_download
 
-def getsome():
-    hash.sha3("abcd")
-    data = genesis.randomBytes(100)
-    body, status = request.get("swarm-gateways.net", "/")
-    print(body, status)
+kib = 1024
+mib = 1024*kib
+gib = 1024*mib
+tib = 1024*gib
 
 def main():
-    getsome()
+    upload_download.do(3*kib)
 
 if __name__ == '__main__':
     main()
