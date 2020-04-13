@@ -28,8 +28,3 @@ def do(size):
 
     print("retrieved content hash matches uploaded content")
     print("done for today! thanks!")
-
-
-
-
-
