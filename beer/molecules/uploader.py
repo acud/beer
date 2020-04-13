@@ -1,7 +1,8 @@
 from atoms import request
 
-def uploadto(nodeid, namespace, data):
+def uploadTo(nodeid, namespace, data,h):
     url = f"bee-{nodeid}.{namespace}.core.internal:80"
-    print(url)
-    return request.post(url,"/bzz-chunk/abcd",False,data)
+    resource = f"/bzz-chunk/{h}"
+    print(f"uploading to locator: {url}{resource}")
+    return request.post(url,resource,False,data)
 

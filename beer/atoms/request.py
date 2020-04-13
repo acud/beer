@@ -16,20 +16,13 @@ def delete(url,resource, https, body):
 
 
 def doReq(url, resource, body, https, method):
-    print(url,resource)
     conn = None
     if https == True:
         conn = client.HTTPSConnection(url)
     else:
         conn = client.HTTPConnection(url)
-   
-    if method == "POST":
-        print("posting")
-        conn.request(method,resource,body)
-    else:
-        print("elsing")
-        conn.request(method, resource)
-
+    
+    conn.request(method,resource,body)
     resp = conn.getresponse()
     data = resp.read()
     conn.close()
